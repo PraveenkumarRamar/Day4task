@@ -1,0 +1,18 @@
+//Display all country flags in console
+
+let arr ;
+    
+    for(var i=0; i<arr.length; i++){
+        
+        console.log(arr[i].flag);
+
+    }
+    //display all country names,region,sub-region,population;
+
+    let arr ;
+    
+    for(var i=0; i<arr.length; i++){
+        
+        console.log(arr[i].name,arr[i].sub-region,arr[i].region,arr[i].population);
+
+    }

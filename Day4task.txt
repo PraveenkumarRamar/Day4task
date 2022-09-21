@@ -1,18 +1,39 @@
 //Display all country flags in console
 
-let arr ;
     
-    for(var i=0; i<arr.length; i++){
-        
-        console.log(arr[i].flag);
+   var request = new XMLHttpRequest();;
+    request.open("GET","https://restcountries.com/v2/all")
+    request.send();
+    request.onload = function() {
+        var res = JSON.parse(request.response);
+        console.log(res);
+        for(var details in res) {
+            console.log(res[details].flags);
+            }
+        }
 
-    }
     //display all country names,region,sub-region,population;
 
-    let arr ;
-    
-    for(var i=0; i<arr.length; i++){
-        
-        console.log(arr[i].name,arr[i].sub-region,arr[i].region,arr[i].population);
-
+   var request  = new XMLHttpRequest();
+   request.open("GET","https://restcountries.com/v2/all")
+   request.send();
+   request.onload = function() {
+    var res = JSON.parse(request.response);
+    console.log(res);
+    for(var details in res) {
+        console.log("Country name : " + res[details].name + " Country region : " + res[details].region + " subregion : " + res[details].subregion);
     }
+   }
+
+   //-----------------------------------------------------------------------------------------
+compare the JSON VALUE.
+
+   var obj = {name : "person1",
+            age : 21
+}
+var obj1 = {
+    age : 21,
+    name : "person2"
+}
+var equal = JSON.stringify(obj1) === JSON.stringify(obj1);
+console.log(equal);
